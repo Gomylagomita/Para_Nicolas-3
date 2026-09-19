@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Una sorpresa para ti 🌸</title>
+    <style>
+        body {
+            background-image: url('https://i.pinimg.com/736x/ab/8f/28/ab8f2848098989dd63b1098ecd37d96f.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+        .capa-fondo {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(255, 229, 236, 0.4); 
+            z-index: -1;
+        }
+        .contenedor {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+            border: 3px solid #ffb3c6;
+            max-width: 400px;
+            width: 90%;
+            transition: all 0.5s ease;
+            z-index: 1;
+        }
+        h1 { color: #ff4d6d; font-size: 26px; margin-bottom: 20px; }
+        .gif { width: 150px; margin-bottom: 10px; border-radius: 10px; }
+        .botones {
+            margin-top: 20px;
+            position: relative;
+            height: 60px;
+        }
+        button {
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+        #btnSi {
+            background-color: #ff4d6d;
+            color: white;
+            margin-right: 15px;
+        }
+        #btnSi:hover { transform: scale(1.1); background-color: #ff758f; }
+        #btnNo {
+            background-color: #adb5bd;
+            color: white;
+            position: absolute;
+        }
+        .carta-secreta {
+            display: none;
+            background-color: #fffaf0;
+            border: 2px dashed #ffb3c6;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: left;
+            color: #4a4a4a;
+            font-size: 16px;
+            line-height: 1.6;
+            box-shadow: inset 0 0 20px rgba(255, 179, 198, 0.2);
+            max-height: 350px;
+            overflow-y: auto;
+        }
+        .carta-secreta h2 {
+            text-align: center;
+            color: #ff4d6d;
+            margin-top: 0;
+            font-size: 22px;
+        }
+        .firma {
+            text-align: right;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #ff4d6d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="capa-fondo"></div>
+
+    <!-- Pantalla Inicial -->
+    <div id="pantallaInicio" class="contenedor">
+        <img id="gifGatito" class="gif" src="https://i.pinimg.com/736x/26/73/e6/2673e63f2557240a1a9b462e1e0c54e0.jpg" alt="Gatito tierno">
+        <h1 id="pregunta">Te escribí una carta... quieres leerla?</h1>
+        
+        <div class="botones">
+            <button id="btnSi" onclick="abrirCarta()">Siiiii 💕</button>
+            <button id="btnNo" onmouseover="moverBoton()" onclick="moverBoton()">No</button>
+        </div>
+    </div>
+
+    <!-- Pantalla de la carta -->
+    <div id="pantallaCarta" class="contenedor" style="display: none;">
+        <div class="carta-secreta" id="contenidoCarta">
+            <h2>Para mi amorchito Nicolas🌸</h2>
+            
+            <p>Mi querido amor</p>
+            <p>Como empezar? Oh! Qué tal diciendote que te amo? Porque realmente te amo, eres todo para mi. Y lo digo en serio, cuando despierto, cuando como, cuando estudio, siempre estas en mi mente, siempre te tengo presente.</p>
+            <p>Siempre me encuentro a mi misma extrañandote, porque incluso estando contigo, quisiera ser egoista y tenerte más tiempo. Amo tu presencia, amo tus risas, tu voz, tu manera tonta de expresarte, amo como te equivocas, tus esfuerzos, amo todo de ti. Y te amo, te amo, te amo, te amo! Te queda claro? Yo te amo.</p>
+            <p>No sé como te sientes la mayoría del tiempo, y quisiera entenderte, hago ese esfuerzo para entenderte, a veces se me hace dificil, sabes? Pero contigo no quiero rendirme, y no lo haré.</p>
+            <p>Nunca he querido involucrarme tanto con alguien, pero contigo quiero todo, quiero estar a tu lado en cada momento, en cada momento feliz y triste, cuando te enojes o te sientas derrotado, quiero que me busques para yo poder sostenerte, porque nunca serás una carga, tu felicidad es mi prioridad y eres a quien anhelo. </p>
+            <p>Siempre estoy y estaré aquí para ti, por el momento no fisicamente, pero mi corazón siempre esta contigo y quiero que tengas eso presente.</p>
+            <p>Te amo como no tienes idea, te amo con todo lo que soy y seré, te amo por quien eres y no por una version idealizada de ti. Y si, me falta conocerte, pero cada aspecto que voy conociendo de ti, lo amo. Incluso si fuese algo que me moleste, yo sé y confio en que siempre estaremos dispuestos para hablarlo y estar bien.</p>
+            <p>Es algo que adoro de ti, sabes? Yo tiendo a hacer los problemas más grandes de los que son, pero luego estas tú, eres practico y lo arreglamos rapidamente, por eso amo comunicarme contigo, y quisiera, en verdad, que tú tambien tuvieras esa confianza para decirme si algo te molesta o te incomoda, incluso si te parece tonto, porque así como tú me das esa seguridad, yo tambíen quiero dartela.</p>
+            <p>Quiero hacer las cosas bien contigo, realmente. Sé como puedo llegar a ser, y creeme que estoy esforzandome por ti, para que sientas como te amo. Yo...realmente te amo, no sé como más expresartelo, te amo tanto que siento ganas de llorar. Te amo tanto que solo pensar que te sientes insecure a veces me duele, quisiera que te veas como yo te veo, eres maravilloso, increible, y precioso.</p>
+            <p>Así que amor, estas condenado conmigo, porque no hay forma que te deje ir, te lo dije desde un inicio, estamos conectados. Tú eres mi complemento, mi amado, eres mi Nicolas, el amor de mi vida, mi ......mi todo!! Te amooooo!!!!!</p>
+            <div class="firma">Con muchooooo amor, Gabriela💖</div>
+                        
+            <div style="text-align: center; margin-top: 30px;">
+                <button id="btnMisterio" onclick="revelarMiniCarta()" style="background-color: #ff758f; color: white; font-size: 15px; padding: 8px 15px;">
+                    Quieres saber algo más, amor?
+                </button>
+            </div>
+
+            <div id="miniCarta" style="display: none; margin-top: 25px; padding: 15px; background-color: #fff0f5; border: 2px dotted #ff758f; border-radius: 10px; font-size: 15px; animation: aparecer Suave 0.5s ease;">
+                <h3 style="margin-top: 0; color: #ff4d6d; text-align: center;">Notita Secreta 🐱💕</h3>
+                <p>Cada vez que escucho esa canción no puedo evitar pensar en ti, es como me siento por ti. Te amo, Nicolas.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- REPRODUCTOR DE MÚSICA -->
+    <audio id="musicaFondo" loop preload="auto">
+        <source src="love" type="audio/mpeg">
+        <source src="love.mp3" type="audio/mpeg">
+        <source src="love.mpeg" type="audio/mpeg">
+        Tu navegador no soporta música de fondo.
+    </audio>
+
+    <form id="miFormulario" action="https://formspree.io/f/mdekkjqr" method="POST" style="display:none;">
+        <input type="text" name="Abrio_La_Carta" value="¡Nicolás abrió y leyó tu cartita! 💌✨">
+    </form>
+
+    <script>
+        const btnNo = document.getElementById('btnNo');
+        const btnSi = document.getElementById('btnSi');
+        const pantallaInicio = document.getElementById('pantallaInicio');
+        const pantallaCarta = document.getElementById('pantallaCarta');
+        const contenidoCarta = document.getElementById('contenidoCarta');
+        const musica = document.getElementById('musicaFondo');
+        const gifGatito = document.getElementById('gifGatito');
+        const pregunta = document.getElementById('pregunta');
+
+        // Función para revelar la mini carta
+        function revelarMiniCarta() {
+            const miniCarta = document.getElementById('miniCarta');
+            const btnMisterio = document.getElementById('btnMisterio');
+            
+            miniCarta.style.display = 'block';
+            btnMisterio.style.display = 'none';
+
+            setTimeout(() => {
+                contenidoCarta.scrollTo({ top: contenidoCarta.scrollHeight, behavior: 'smooth' });
+            }, 100);
+        }
+
+        // si intenta tocar el "No"
+        function moverBoton() {
+            pregunta.innerHTML = "Ibas a decir que no????? No tienes opción!";
+            pregunta.style.color = "#ff1a43"; 
+            gifGatito.src = "https://i.pinimg.com/736x/50/b6/f7/50b6f7e459827b0ecea026a6cefa3c66.jpg";
+            btnSi.style.transform = "scale(1.2)";
+            btnSi.innerHTML = "Siii!!! 💕 (Obligatorio)";
+            btnNo.style.display = 'none';
+        }
+
+        function abrirCarta() {
+            // Abre la cartadfd oculta la pantalla de inicio de inmediato
+            pantallaInicio.style.display = 'none';
+            pantallaCarta.style.display = 'block';
+            contenidoCarta.style.display = 'block';
+            
+            // Activa música 
+            musica.play().catch(error => console.log("La reproducción automática requiere interacción previa:", error));
+            
+            const formulario = document.getElementById('miFormulario');
+            const datos = new FormData(formulario);
+
+            fetch(formulario.action, {
+                method: formulario.method,
+                body: datos,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(respuesta => {
+                if (respuesta.ok) {
+                    console.log("Notificación enviada a tu correo en secreto! >-<💌");
+                }
+            })
+            .catch(error => console.log("Error al enviar notificación en segundo plano:", error));
+        }
+
+    </script>
+</body>
+</html>
